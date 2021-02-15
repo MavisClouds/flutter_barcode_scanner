@@ -88,15 +88,22 @@ public class GraphicOverlay<T extends GraphicOverlay.Graphic> extends View {
             mOverlay.postInvalidate();
         }
     }
-    displayMetrics = new DisplayMetrics();
-    getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
     
+    @Override
+   protected void onCreate(Bundle savedInstanceState) {
+      super.onCreate(savedInstanceState);
+
+      displayMetrics = new DisplayMetrics();
+      getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);  
+      int screenHeight = displayMetrics.heightPixels;
+      int screenWidth = displayMetrics.widthPixels;
+
+   }
+
     public GraphicOverlay(Context context, AttributeSet attrs) {
         super(context, attrs);
 
-        
-      int screenHeight = displayMetrics.heightPixels;
-      int screenWidth = displayMetrics.widthPixels;
+      
 
         rectWidth = screenWidth;
         rectHeight = BarcodeCaptureActivity.SCAN_MODE == BarcodeCaptureActivity.SCAN_MODE_ENUM.QR.ordinal()

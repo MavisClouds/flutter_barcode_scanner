@@ -51,10 +51,9 @@ public class GraphicOverlay<T extends GraphicOverlay.Graphic> extends View {
     private int rectWidth, rectHeight, frames, lineColor, lineWidth;
     private boolean revAnimation;
 
-    DisplayMetrics displayMetrics = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-        int height = displayMetrics.heightPixels;
-        int width = displayMetrics.widthPixels;
+    public static int getScreenWidth() {
+        return Resources.getSystem().getDisplayMetrics().widthPixels;
+    }
 
 
     public static abstract class Graphic {
@@ -96,7 +95,7 @@ public class GraphicOverlay<T extends GraphicOverlay.Graphic> extends View {
 
         
 
-        rectWidth = width;
+        rectWidth = getScreenWidth();
         rectHeight = BarcodeCaptureActivity.SCAN_MODE == BarcodeCaptureActivity.SCAN_MODE_ENUM.QR.ordinal()
                 ? AppConstants.BARCODE_RECT_HEIGHT : (int) (AppConstants.BARCODE_RECT_HEIGHT * 2);
 

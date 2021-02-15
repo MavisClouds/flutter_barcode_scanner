@@ -91,7 +91,7 @@ public class GraphicOverlay<T extends GraphicOverlay.Graphic> extends View {
 
         rectWidth = AppConstants.BARCODE_RECT_WIDTH;
         rectHeight = BarcodeCaptureActivity.SCAN_MODE == BarcodeCaptureActivity.SCAN_MODE_ENUM.QR.ordinal()
-                ? AppConstants.BARCODE_RECT_HEIGHT * 2 : (int) (AppConstants.BARCODE_RECT_HEIGHT / 1.5);
+                ? AppConstants.BARCODE_RECT_HEIGHT : (int) (AppConstants.BARCODE_RECT_HEIGHT / 1);
 
         lineColor = Color.parseColor(FlutterBarcodeScannerPlugin.lineColor);
 

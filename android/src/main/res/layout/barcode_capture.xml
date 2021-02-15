@@ -75,7 +75,7 @@
             android:layout_height="wrap_content"
             android:scaleType="centerInside"
             android:background="@android:color/transparent"
-            android:src="@drawable/scanText" />
+            android:src="@drawable/scan" />
 
     </RelativeLayout>
 

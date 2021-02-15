@@ -67,6 +67,8 @@
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
         android:gravity="center"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp"
         android:background="#FFFFFF">
 
         <ImageView

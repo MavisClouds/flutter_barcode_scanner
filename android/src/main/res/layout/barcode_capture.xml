@@ -16,7 +16,7 @@
             android:id="@+id/graphicOverlay"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#44000000" />
+            android:background="@android:color/transparent" />
 
     </com.amolg.flutterbarcodescanner.camera.CameraSourcePreview>
 
@@ -24,7 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_alignParentBottom="false"
-        android:background="@android:color/transparent">
+        android:background="#44000000">
 
         <ImageView
             android:id="@+id/btnBarcodeCaptureCancel"
@@ -33,18 +33,18 @@
             android:layout_alignParentEnd="false"
             android:layout_alignParentRight="false"
             android:layout_marginStart="30dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
             android:background="@android:color/transparent"
             android:src="@drawable/cancel" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:layout_centerHorizontal="true"
-            android:text="Scan untuk cari produk"
-            />
+            android:gravity="center_horizontal"
+            android:layout_marginTop="25dp"
+
+            android:text="Scan untuk cari produk" />
 
 
         <ImageView

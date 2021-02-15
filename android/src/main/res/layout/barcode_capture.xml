@@ -46,7 +46,8 @@
             android:layout_marginRight="10dp"
             android:layout_marginTop="10dp"
             android:contentDescription="Flash button"
-            android:src="@drawable/ic_barcode_flash_off" />
+            android:src="@drawable/flashoff"
+            android:layout_alignParentRight="true" />
 
         
     </RelativeLayout>

@@ -35,6 +35,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.Vector;
+import android.util.DisplayMetrics;
 
 
 public class GraphicOverlay<T extends GraphicOverlay.Graphic> extends View {
@@ -51,9 +52,7 @@ public class GraphicOverlay<T extends GraphicOverlay.Graphic> extends View {
     private int rectWidth, rectHeight, frames, lineColor, lineWidth;
     private boolean revAnimation;
 
-    public static int getScreenWidth() {
-        return Resources.getSystem().getDisplayMetrics().widthPixels;
-    }
+    DisplayMetrics displayMetrics;
 
 
     public static abstract class Graphic {
@@ -93,9 +92,12 @@ public class GraphicOverlay<T extends GraphicOverlay.Graphic> extends View {
     public GraphicOverlay(Context context, AttributeSet attrs) {
         super(context, attrs);
 
-        
+        displayMetrics = new DisplayMetrics();
+      getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+      int screenHeight = displayMetrics.heightPixels;
+      int screenWidth = displayMetrics.widthPixels;
 
-        rectWidth = getScreenWidth();
+        rectWidth = screenWidth;
         rectHeight = BarcodeCaptureActivity.SCAN_MODE == BarcodeCaptureActivity.SCAN_MODE_ENUM.QR.ordinal()
                 ? AppConstants.BARCODE_RECT_HEIGHT : (int) (AppConstants.BARCODE_RECT_HEIGHT * 2);
 

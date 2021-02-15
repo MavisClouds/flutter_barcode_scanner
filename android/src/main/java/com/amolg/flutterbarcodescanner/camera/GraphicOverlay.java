@@ -88,12 +88,13 @@ public class GraphicOverlay<T extends GraphicOverlay.Graphic> extends View {
             mOverlay.postInvalidate();
         }
     }
-
+    displayMetrics = new DisplayMetrics();
+    getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+    
     public GraphicOverlay(Context context, AttributeSet attrs) {
         super(context, attrs);
 
-        displayMetrics = new DisplayMetrics();
-      getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        
       int screenHeight = displayMetrics.heightPixels;
       int screenWidth = displayMetrics.widthPixels;
 

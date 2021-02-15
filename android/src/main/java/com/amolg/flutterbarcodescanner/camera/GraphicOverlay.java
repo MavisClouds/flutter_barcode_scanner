@@ -15,6 +15,7 @@
  */
 package com.amolg.flutterbarcodescanner.camera;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -22,6 +23,7 @@ import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.RectF;
+import android.os.Bundle;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -88,22 +90,21 @@ public class GraphicOverlay<T extends GraphicOverlay.Graphic> extends View {
             mOverlay.postInvalidate();
         }
     }
-    
-    @Override
-   protected void onCreate(Bundle savedInstanceState) {
-      super.onCreate(savedInstanceState);
 
-      displayMetrics = new DisplayMetrics();
-      getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);  
-      int screenHeight = displayMetrics.heightPixels;
-      int screenWidth = displayMetrics.widthPixels;
 
-   }
+
+
+
+
 
     public GraphicOverlay(Context context, AttributeSet attrs) {
         super(context, attrs);
 
-      
+        displayMetrics = new DisplayMetrics();
+        ((Activity) getContext()).getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+
+        int screenHeight = displayMetrics.heightPixels;
+        int screenWidth = displayMetrics.widthPixels;
 
         rectWidth = screenWidth;
         rectHeight = BarcodeCaptureActivity.SCAN_MODE == BarcodeCaptureActivity.SCAN_MODE_ENUM.QR.ordinal()

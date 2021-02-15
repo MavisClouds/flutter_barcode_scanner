@@ -51,6 +51,11 @@ public class GraphicOverlay<T extends GraphicOverlay.Graphic> extends View {
     private int rectWidth, rectHeight, frames, lineColor, lineWidth;
     private boolean revAnimation;
 
+    DisplayMetrics displayMetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        int height = displayMetrics.heightPixels;
+        int width = displayMetrics.widthPixels;
+
 
     public static abstract class Graphic {
         private GraphicOverlay mOverlay;
@@ -89,10 +94,7 @@ public class GraphicOverlay<T extends GraphicOverlay.Graphic> extends View {
     public GraphicOverlay(Context context, AttributeSet attrs) {
         super(context, attrs);
 
-        DisplayMetrics displayMetrics = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-        int height = displayMetrics.heightPixels;
-        int width = displayMetrics.widthPixels;
+        
 
         rectWidth = width;
         rectHeight = BarcodeCaptureActivity.SCAN_MODE == BarcodeCaptureActivity.SCAN_MODE_ENUM.QR.ordinal()

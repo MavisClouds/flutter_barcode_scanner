@@ -25,29 +25,36 @@
         android:layout_height="60dp"
         android:layout_alignParentBottom="false"
         android:background="@android:color/transparent">
+
         <ImageView
             android:id="@+id/btnBarcodeCaptureCancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="false"
             android:layout_alignParentRight="false"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
-            android:src="@drawable/cancel"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp"
             android:background="@android:color/transparent"
-             />
+            android:src="@drawable/cancel" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            />
+
 
         <ImageView
             android:id="@+id/imgViewBarcodeCaptureUseFlash"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_alignParentEnd="true"
-            android:layout_marginRight="10dp"
+            android:layout_alignParentRight="true"
             android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
             android:contentDescription="Flash button"
-            android:src="@drawable/ic_barcode_flash_off"
-            android:layout_alignParentRight="true" />
+            android:src="@drawable/ic_barcode_flash_off" />
 
-        
+
     </RelativeLayout>
 </RelativeLayout>
